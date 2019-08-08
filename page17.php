@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Поэзия От НеПоэта</title>
+</head>
+
+<body>
+<!--шляпу не меняю-->    
+<a href="https://vk.com/silverlight89">
+<img src=Avtor.jpg width="20%" height="40%" alt= "я"></a>
+<a href="http://www.stihi.ru/avtor/andreyvilyavdo">
+<img src="https://vk.com/silverlight89?z=photo92883219_456239081%2Falbum92883219_000%2Frev" width="20%" height="40%" alt= "Автора!"></a>
+<a href="http://www.stihi.ru/avtor/andyvi"><img src="AXReYo7wbA4.jpg" width="20%" height="40%" alt= "На Бис!"></a>
+<a href="https://vk.com/ot_nepoeta">
+<img src=group.jpg width="20%" height="40%" alt= "группа"></a>
+<a href="https://www.youtube.com/channel/UCH2YHdBObNbSaGMGN21NDvg" >
+<img src=Channel.jpg width="20%" height="40%" alt= "канал"></a>
+<h4>***</h4>
+<p>Время заметает следы-</p>
+<p>Я уже почти не тот, что был,</p>
+<p>Время заливает дождём</p>
+<p>Следы костра…</p>
+<br>
+<p>За окном кружит листопад</p>
+<p>Засыпает золотом, что забыл,</p>
+<p>Как напоминание, что</p>
+ <p>Уже пора:</p>
+<br>
+<p>Вспомнить тех, с кем жизнь свою</p>
+<p>Делил пополам</p>  
+<p>Опыт свой делил на всех просто так</p>
+<p>А ещё бы не забыть о том, как летал,</p>
+<p>Пусть всё это сохранится во снах…</p>
+<!-- внедряю интерактив-->
+<form name="comment" action="comment.php" method="post">
+  <p>
+    <label>Имя:</label>
+    <input type="text" name="name" />
+  </p>
+  <p>
+    <label>Комментарий:</label>
+    <br />
+    <textarea name="text_comment" cols="30" rows="50"></textarea>
+  </p>
+  <p>
+    <input type="hidden" name="page_id" value="17" />
+    <input type="submit" value="Отправить" />
+  </p>
+</form>
+<?php
+  $page_id = 17;// Уникальный идентификатор страницы (статьи или поста)
+  $mysqli = new mysqli("localhost", "u0154084_1989", "D/4OLQSY", "u0154084_1989");;
+  $result_set = $mysqli->query("SELECT * FROM `comments` WHERE `page_id`='$page_id'"); //Вытаскиваем все комментарии для данной страницы
+  while ($row = $result_set->fetch_assoc()) {
+    print_r($row); //Вывод комментариев
+    echo "<br />";
+  }
+?>
+<button><a href=https://ridero.ru/books/stikhi_beloi_nochi/>Моя книга стихов</a></button>
+<ol><li><button><a href="Index.php">Главная</a></button></li>
+<li><button><a href="page3.php">О радости</a></button></li><!--Добавляем ссылку на другую страницу-->
+<li><button><a href="page1.php">Белая ночь</a></button></li>
+<li><button><a href="page2.php">Путешествие за звездой</a></button></li>
+<li><button><a href="page4.php">Песня ветра</a></button></li>
+<li><button><a href="page5.php">Звёздное</a></button></li>
+<li><button><a href="index6.html">Выбор дороги</a></button></li>
+<li><button><a href="index7.html">Весна</a></button></li>
+<li><button><a href="page8.html">Она и он (полусказка)</a></button></li>
+<li><button><a href="page9.html">Типичное Питерское</a></button></li>
+<li><button><a href="page10.html">Для тех, кто</a></button></li>
+<li><button><a href="Page11.html">Небо на всех</a></button></li>
+<li><button><a href="page12.html">Рисунок Солнцем</a></button></li>
+<li><button><a href="page13.html">Стихи на закате</a></button></li>
+<li><button><a href="page14.html">Не ждущий</a></button></li>
+<li><button><a href="page15.html">Просто нарисуй небо</a></button></li>
+<li><button><a href="page16.html">Освети снега</a></button></li>
+<li><button><a href="page18.html">***</a></button></li></ol>
+
+</body>
+</html>
