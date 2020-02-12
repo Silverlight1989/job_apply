@@ -45,7 +45,7 @@ li{list-style: none;}
 </form>
 <?php
   $page_id = 1;// Уникальный идентификатор страницы (статьи или поста)
-  $mysqli = new mysqli("localhost", "u0154084_1989", "D/4OLQSY", "u0154084_1989");// Подключается к базе данных
+  $mysqli = new mysqli("localhost", "u0154084_1989", "-BrZP4am", "u0154084_1989");// Подключается к базе данных
   $result_set = $mysqli->query("SELECT * FROM `comments` WHERE `page_id`='$page_id'"); //Вытаскиваем все комментарии для данной страницы
   while ($row = $result_set->fetch_assoc()) {
     print_r($row); //Вывод комментариев
@@ -53,9 +53,9 @@ li{list-style: none;}
   }
 ?>
 <p>А пока что он будет таким:</p>
-<ul class="menu"><li><button><a class="menu_a" href="page3.php">О радости</a></button></li></ul><!--Добавляем ссылку на другую страницу-->
-<ul class="menu"><li><button><a class="menu_a" href="page1.php">Белая ночь</a></button></li></ul>
-<ul class="menu"><li><button><a class="menu_a" href="page2.php">Путешествие за звездой</a></button></li></ul>
+<ul class="menu"><li><button><a class="menu_a" href="page1.php">О радости</a></button></li></ul><!--Добавляем ссылку на другую страницу-->
+<ul class="menu"><li><button><a class="menu_a" href="page2.php">Белая ночь</a></button></li></ul>
+<ul class="menu"><li><button><a class="menu_a" href="page3.php">Путешествие за звездой</a></button></li></ul>
 <ul class="menu"><li><button><a class="menu_a" href="page4.php">Песня ветра</a></button></li></ul>
 <ul class="menu"><li><button><a class="menu_a" href="page5.html">Звёздное</a></button></li></ul>
 <ul class="menu"><li><button><a class="menu_a" href="page6.html">Выбор дороги</a></button></li></ul>
